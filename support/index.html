@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debris · Support</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h1>Support</h1>
+<p class="lede">Debris is a free Mac app for finding and removing what apps leave behind.</p>
+
+<p>It has three modules: Leftovers for the files of apps that are gone, Uninstall for an app
+together with everything it owns, and Clean for caches, logs, developer artifacts and installer
+files. Everything goes through a list and into the Trash.</p>
+
+<h2>Requirements</h2>
+
+<ul>
+  <li>macOS 15 Sequoia or later</li>
+  <li>Full Disk Access, granted in System Settings when the app asks</li>
+  <li>An administrator password when system-owned files are on the list</li>
+</ul>
+
+<h2>Common questions</h2>
+
+<p><strong>Debris says it does not have Full Disk Access.</strong> macOS hides sandboxed app
+containers, Mail, Safari and cookie storage from every app until the permission is granted. Click
+Open System Settings in the banner, switch Debris on under Full Disk Access, come back and click
+Check Again. Without the permission the app still runs, but those places stay invisible and
+container leftovers cannot be moved.</p>
+
+<p><strong>Why is this file on the list?</strong> Every item says why: which identifier, name,
+signature or launchd job tied it to an app, or that nothing installed matches it at all. The
+confidence says how sure that is. Likely means no installed app, helper or package matches.
+Possibly means the same vendor still has other apps installed. Unclear means a plain name with no
+identifier, or a container whose owner cannot be read. The filter starts at Likely; the other two
+levels are there to look at, not to clear blindly.</p>
+
+<p><strong>I removed something I needed.</strong> Nothing is deleted. Everything Debris removes
+goes to the Trash, so drag it back to where it was. Items that needed an administrator password
+are handed over to your user on the way, so they can be put back, and the Trash can be emptied,
+without a second password.</p>
+
+<p><strong>Why does it ask for an administrator password?</strong> Launch daemons, helper tools
+and other files outside your home folder cannot be moved by a normal user. Debris asks once per
+batch, through macOS's own prompt, and moves those files to your Trash with your user as the
+owner. It never sees the password.</p>
+
+<p><strong>A system extension says it cannot be moved.</strong> Extensions staged under
+/Library/SystemExtensions are protected by System Integrity Protection, so no app can move them
+while it is on. Debris lists them so you know they are there, but removing one takes the app that
+installed it, reinstalled if it is gone.</p>
+
+<p><strong>Is it on the App Store?</strong> No, and it will not be. Debris is not sandboxed,
+because the whole point is to reach files a sandboxed app cannot. Releases are meant to be signed
+with a Developer ID and notarized by Apple, so that macOS opens them without a warning. The first
+one is being prepared; until it is out, the app is built from source as the
+<a href="https://github.com/mews-se/debris#building">README</a> describes.</p>
+
+<h2>Questions and bug reports</h2>
+
+<p><a href="https://github.com/mews-se/debris/issues">Open an issue on GitHub</a>, which is the
+best place for anything reproducible, or write to
+<a href="mailto:evlog@notmydomain.org">evlog@notmydomain.org</a>. A report about a file Debris
+should not have listed is especially welcome: say what the file was and which app owns it.</p>
+
+<nav>
+  <a href="../">Debris</a>
+  <a href="../privacy/">Privacy Policy</a>
+  <a href="../donate/">Donate</a>
+  <a href="../changelog/">Changelog</a>
+  <a href="https://github.com/mews-se/debris/releases">Releases</a>
+  <a href="https://github.com/mews-se/debris">Source</a>
+</nav>
+
+<footer>
+Debris is an independent open source project and is not affiliated with, endorsed by, or
+supported by Apple.
+</footer>
+
+</body>
+</html>

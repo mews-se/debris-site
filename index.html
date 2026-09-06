@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Debris</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Debris</h1>
+<p class="lede">A Mac app that finds what apps left behind, uninstalls apps together with
+everything they own, and clears caches and developer junk.</p>
+
+<p>Debris is in early development. All three modules work, and the first signed release is being
+prepared. Until it is out, the app is built from source with Xcode, as the
+<a href="https://github.com/mews-se/debris#building">README</a> describes; releases will appear
+<a href="https://github.com/mews-se/debris/releases">on GitHub</a>, not on the App Store. Debris
+is not sandboxed, because the whole point is to reach files a sandboxed app cannot.</p>
+
+<p><strong>Leftovers</strong> compares the folders where apps keep their state against the apps,
+helpers, extensions and Homebrew packages that are actually installed, and lists whatever has no
+owner left, grouped by the app it came from, with a size, a date and a confidence.
+<strong>Uninstall</strong> shows an installed app together with everything Debris can tie to it,
+and leaves alone whatever another app still uses. <strong>Clean</strong> removes caches, logs,
+build folders, package manager downloads and installer files, each behind a rule that says what
+the files are and why they are safe to remove.</p>
+
+<p>Every module shows the list first, explains why each file is on it, and moves things to the
+Trash rather than deleting them, so a wrong guess is one drag away from undone. Nothing is
+removed on its own.</p>
+
+<p>Debris never connects to anything. There is no account, no update check, no analytics and no
+crash reporting. It reads your Mac and writes to the Trash, and that is all.</p>
+
+<p>Debris is free and open source under the MIT licence, with no ads and no purchases. The
+<a href="https://github.com/mews-se/debris">source code is on GitHub</a>.</p>
+
+<h2>What you need</h2>
+<ul>
+  <li>A Mac running macOS 15 Sequoia or later</li>
+  <li>Full Disk Access, which the app asks for: without it, parts of the Library stay hidden</li>
+  <li>An administrator password only when system-owned files are on the list, one prompt per
+      batch</li>
+</ul>
+
+<nav>
+  <a href="privacy/">Privacy Policy</a>
+  <a href="support/">Support</a>
+  <a href="donate/">Donate</a>
+  <a href="changelog/">Changelog</a>
+  <a href="https://github.com/mews-se/debris/releases">Releases</a>
+  <a href="https://github.com/mews-se/debris">Source</a>
+</nav>
+
+<footer>
+Debris is an independent open source project and is not affiliated with, endorsed by, or
+supported by Apple.
+</footer>
+
+</body>
+</html>
