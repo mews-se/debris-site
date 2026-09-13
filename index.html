@@ -12,15 +12,16 @@
 <p class="lede">A Mac app that finds what apps left behind, uninstalls apps together with
 everything they own, and clears caches and developer junk.</p>
 
-<p>Debris 1.0 is out. <a href="https://github.com/mews-se/debris/releases/latest">Download the disk
+<p>Debris 1.0.1 is out. <a href="https://github.com/mews-se/debris/releases/latest">Download the disk
 image</a>, open it and drag Debris to Applications. The app is signed with a Developer ID and
 notarized, so Gatekeeper lets it run without a detour; it needs macOS 15 or later. Releases appear
 <a href="https://github.com/mews-se/debris/releases">on GitHub</a>, not on the App Store. Debris
 is not sandboxed, because the whole point is to reach files a sandboxed app cannot.</p>
 
 <p><strong>Leftovers</strong> compares the folders where apps keep their state against the apps,
-helpers, extensions and Homebrew packages that are actually installed, and lists whatever has no
-owner left, grouped by the app it came from, with a size, a date and a confidence.
+helpers, extensions, command-line tools and Homebrew packages that are actually installed, and
+lists whatever has no owner left, grouped by the app it came from, with a size, a date and a
+confidence.
 <strong>Uninstall</strong> shows an installed app together with everything Debris can tie to it,
 and leaves alone whatever another app still uses. <strong>Clean</strong> removes caches, logs,
 build folders, package manager downloads and installer files, each behind a rule that says what

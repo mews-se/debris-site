@@ -22,6 +22,30 @@ in steps. Between the steps the work is visible on
 <a href="https://github.com/mews-se/debris/issues">open issues</a>. Up next is a detail panel that
 explains each listed file.</p>
 
+<h2>1.0.1</h2>
+<p class="date">13 September 2026</p>
+
+<p>A fix release for the Leftovers scan,
+<a href="https://github.com/mews-se/debris/releases/tag/v1.0.1">on GitHub</a>. Four kinds of file
+were listed although their owner was still on the disk:</p>
+<ul>
+<li>Preferences that a Qt app writes under its own name, such as
+<code>com.raspberrypi.Raspberry Pi Imager.plist</code>, were graded as a vendor match and listed as
+possibly left over while the app was installed. The name of an installed app now outranks the
+vendor. Only the names of apps and Homebrew packages count, not those of the helpers embedded in
+them, which tend to be called Helper or Widgets.</li>
+<li>Command-line tools installed outside Homebrew, with pip or a downloaded installer, were unknown
+to the scan, so their folders in <code>~/.cache</code>, <code>~/.config</code> and
+<code>~/.local/share</code> were listed. Executables in the Homebrew, <code>/usr/local</code>,
+<code>~/.local/bin</code>, <code>~/.cargo/bin</code>, <code>~/go/bin</code> and <code>~/bin</code>
+directories now own the folders that carry their name.</li>
+<li>Apps that ship inside another app's <code>node_modules</code> folder, such as Codex Computer Use
+inside ChatGPT, were not seen, so their caches and preferences were listed. The folder is now read
+inside app bundles, for a fraction of a second on a scan.</li>
+<li>The node-gyp cache in <code>~/Library/Caches</code> was listed as a likely leftover while node
+was installed. It belongs to node.</li>
+</ul>
+
 <h2>1.0</h2>
 <p class="date">8 September 2026</p>
 
