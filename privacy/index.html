@@ -9,7 +9,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Debris · last updated 6 September 2026</p>
+<p class="updated">Debris · last updated 10 November 2026</p>
 
 <p><strong>Debris does not collect any data.</strong></p>
 
@@ -21,10 +21,11 @@ nothing about you or your Mac, because there is nothing in the app that could se
 
 <p>Debris reads the places where macOS and your apps keep their files: the Applications folders,
 the Library folders in your home folder and on the system, launch agents and daemons, package
-receipts, the Homebrew directories and the Spotlight index. That is how it works out what is
-installed and what is left over. It reads the names, sizes, dates and bundle information it needs
-for that, and the code signature of installed apps to learn which files they own. It never reads
-the contents of your documents, mail, browsing data or passwords.</p>
+receipts, the Homebrew directories, the Spotlight index and the list of simulator runtimes Xcode
+keeps. That is how it works out what is installed and what is left over. It reads the names,
+sizes, dates and bundle information it needs for that, and the code signature of installed apps to
+learn which files they own. It never reads the contents of your documents, mail, browsing data or
+passwords.</p>
 
 <h2>Full Disk Access</h2>
 
@@ -32,7 +33,9 @@ the contents of your documents, mail, browsing data or passwords.</p>
 Settings. Debris asks for it so that it can see inside sandboxed app containers, Mail, Safari and
 cookie storage, and move leftovers from those places to the Trash. To find out whether it has the
 permission, the app tries to open one protected system file and closes it again without reading
-anything. The permission is yours to grant or withdraw at any time in System Settings.</p>
+anything. Where that file does not exist, it lists the names in the Safari or Mail folder instead,
+without opening anything in them. The permission is yours to grant or withdraw at any time in
+System Settings.</p>
 
 <h2>Administrator password</h2>
 
@@ -44,7 +47,8 @@ the result of the move.</p>
 
 <p>Debris keeps no settings and no history of its own. macOS may store window positions in the
 app's preferences file, which stays on your Mac and is deleted when you delete the app. Whatever
-you remove goes to the Trash, where it stays until you empty it.</p>
+you remove goes to the Trash, where it stays until you empty it, except simulator runtimes, which
+Xcode's own tool deletes when you ask for it.</p>
 
 <h2>Children</h2>
 

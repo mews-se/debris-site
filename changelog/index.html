@@ -19,8 +19,35 @@ in steps. Between the steps the work is visible on
 
 <p>Work between versions gathers on the
 <a href="https://github.com/mews-se/debris/tree/dev"><code>dev</code> branch</a>, next to the
-<a href="https://github.com/mews-se/debris/issues">open issues</a>. Up next is a detail panel that
-explains each listed file.</p>
+<a href="https://github.com/mews-se/debris/issues">open issues</a>.</p>
+
+<h2>2.0</h2>
+<p class="date">10 November 2026</p>
+
+<p>A release for macOS 27 and for judging the borderline cases,
+<a href="https://github.com/mews-se/debris/releases/tag/v2.0">on GitHub</a>.</p>
+<ul>
+<li>A detail panel beside every list. Select a row and click Details in the toolbar, or press
+Option-Command-I, to see the full path, why the file is listed, which installed apps it was
+compared against, its size and date, and how it will be removed, with buttons to reveal it in
+Finder or copy the path. A leftover of the same vendor shows that vendor's apps that are still
+installed; a leftover nothing claims shows how many apps, helpers, Homebrew packages and
+command-line tools it was held against.</li>
+<li>Clean lists older simulator runtimes: every runtime image simctl is allowed to delete, except
+the newest one of each platform, with its size and when it was last used. On a Mac that builds for
+iOS they are often the largest developer files, around eight gigabytes each. A runtime image cannot
+go to the Trash, so Debris deletes it through <code>xcrun simctl runtime delete</code>. None is
+selected for you, and the confirmation says that they cannot be put back. Xcode downloads a runtime
+again under Settings, Components, and simulators made for a deleted runtime show up under
+Unavailable simulators on the next scan.</li>
+<li>The summary after a removal shows how much went to the Trash and the size of each item, says
+that the space only comes back once the Trash is emptied, and has a button that opens the Trash.</li>
+<li>On macOS 27 Debris said it had no Full Disk Access even with the switch on, because the file it
+checked no longer exists there. It now checks the system's privacy database, with the Safari and
+Mail folders as a fallback. It also checks again whenever you come back to it, so returning from
+System Settings is enough, and a scan made without access runs again once access is there.</li>
+<li>Built with Xcode 27.2 against the macOS 27 SDK. It still runs on macOS 15 and later.</li>
+</ul>
 
 <h2>1.0.1</h2>
 <p class="date">13 September 2026</p>
