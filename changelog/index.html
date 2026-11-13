@@ -21,6 +21,21 @@ in steps. Between the steps the work is visible on
 <a href="https://github.com/mews-se/debris/tree/dev"><code>dev</code> branch</a>, next to the
 <a href="https://github.com/mews-se/debris/issues">open issues</a>.</p>
 
+<h2>2.1</h2>
+<p class="date">13 November 2026</p>
+
+<p>A fix release for Clean,
+<a href="https://github.com/mews-se/debris/releases/tag/v2.1">on GitHub</a>.</p>
+<ul>
+<li>Clean listed every simulator runtime except the newest one of each platform. Xcode can download
+a runtime made for a single device, such as the iPhone Duo, next to the general runtime of the same
+iOS version. When that one was the newest, the runtime every other iPhone and iPad simulator runs on
+was listed as older, and removing it left only the one device working. Clean now reads which
+devices each runtime can simulate and lists a runtime only when all of them also run on a newer
+runtime that stays. The reason in the detail panel names that runtime. A runtime that is the last
+one for an older device is no longer listed either.</li>
+</ul>
+
 <h2>2.0</h2>
 <p class="date">10 November 2026</p>
 
